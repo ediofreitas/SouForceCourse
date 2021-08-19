@@ -1,0 +1,36 @@
+<apex:page id="AccountPDF" renderAs="pdf" sidebar="false" showHeader="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" controller="AccountPDFController" lightningStylesheets="true">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>PDF</title>
+        <style>
+            ul{
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>Account Information</h1>
+            Name: {!CurrentAccount.Name}
+            <br/>
+            Phone: {!CurrentAccount.Phone}
+            <br/>
+            Website: {!CurrentAccount.Website}
+        </section>
+        <section>
+            <h1>Contact Information</h1>
+            <ul>
+                <apex:repeat value="{!Contacts}" var="contato">
+                    <li>
+                        {!contato}
+                    </li>
+                </apex:repeat>
+            </ul>
+           
+        </section>
+    </body>
+</html>
+</apex:page>

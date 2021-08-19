@@ -1,0 +1,52 @@
+<apex:component >
+    <apex:attribute name="list" type="Contact[]" required="true" description=""/>
+    <apex:attribute name="newAddContact" type="ApexPages.Action" required="true" description=""/>
+    <apex:attribute name="newDeleteContact" type="ApexPages.Action" required="true" description=""/>
+    <apex:attribute name="saveContact" type="ApexPages.Action" description=""/>
+    <apex:attribute name="editContact" type="ApexPages.Action" description=""/>
+    <apex:attribute name="isEditMode" type="Boolean" required="true" description=""/>
+    <apex:attribute name="isDetail" type="Boolean" default="false" description=""/>
+
+    <apex:actionFunction name="addContactActionFunction" action="{!newAddContact}" reRender="contactSession" immediate="true"/>
+    <apex:actionFunction name="deleteContactActionFunction" action="{!newDeleteContact}" reRender="contactSession" immediate="true">
+        <apex:param name="index" value=""/>
+    </apex:actionFunction>
+    <apex:actionFunction name="saveContactActionFunction" action="{!saveContact}" reRender="contactSession"/>
+    <apex:actionFunction name="editContactActionFunction" action="{!editContact}" reRender="contactSession" immediate="true"/>
+
+    <style>
+        .hidden-button{
+            display: none;
+        }
+    </style>
+
+    <apex:pageBlockSection id="contactSession" title="Contact Information" columns="1">
+        <apex:pageBlockSectionItem >
+            <Button type="button" onclick="addContactActionFunction();" class="{!IF(!isEditMode, 'hidden-button', '')}">Add Contact</Button>
+            <Button type="button" onclick="saveContactActionFunction();" class="{!IF(isEditMode && isDetail, '', 'hidden-button')}">Save Contact</Button>
+            <Button type="button" onclick="editContactActionFunction();" class="{!IF(isEditMode, 'hidden-button', '')}">Edit Contact</Button>
+        </apex:pageBlockSectionItem>
+        <apex:variable var="index" value="{!0}"/>
+        <apex:pageBlockTable value="{!list}" var="contact">
+            <apex:column rendered="{!isEditMode}">
+                <a href="#" onclick="deleteContactActionFunction({!index});">Delete</a>
+                <apex:variable var="index" value="{!index + 1}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">First Name</apex:facet>
+                <apex:inputField value="{!contact.FirstName}" rendered="{!isEditMode}"/>
+                <apex:outputField value="{!contact.FirstName}" rendered="{!NOT(isEditMode)}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Last Name</apex:facet>
+                <apex:inputField value="{!contact.LastName}" rendered="{!isEditMode}"/>
+                <apex:outputField value="{!contact.FirstName}" rendered="{!NOT(isEditMode)}"/>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Email</apex:facet>
+                <apex:inputField value="{!contact.Email}" rendered="{!isEditMode}"/>
+                <apex:outputField value="{!contact.FirstName}" rendered="{!NOT(isEditMode)}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+</apex:component>

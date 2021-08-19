@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "Aeroporto Internacional de Guarulhos",
+        "Sigla": "GRU",
+        "Pais": "Brasil",
+        "Estado": "São Paulo"
+    },{
+        "Name": "Aeroporto Internacional Dep. Luís Eduardo Magalhães",
+        "Sigla": "SSA",
+        "Pais": "Brasil",
+        "Estado": "Bahia"
+    },{
+        "Name": "Aeroporto Internacional Eduardo Gomes",
+        "Sigla": "MAO",
+        "Pais": "Brasil",
+        "Estado": "Manaus"
+    },{
+        "Name": "Aeroporto Internacional Salgado Filho",
+        "Sigla": "POA",
+        "Pais": "Brasil",
+        "Estado": "Rio Grande do Sul"
+    }
+]

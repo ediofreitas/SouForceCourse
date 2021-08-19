@@ -1,0 +1,19 @@
+<aura:component controller="ImportDataController"
+                implements="flexipage:availableForAllPageTypes">
+
+    <aura:attribute name="showSpinner" type="Boolean" default="false" /> 
+    <lightning:notificationsLibrary aura:id="notifLib" />
+
+    <div class="slds-card">
+        <div class="slds-media__body">
+            <p><lightning:icon iconName="utility:database" size="large" /></p>
+            <p class="slds-m-top_medium">Clique no botão abaixo para baixar os dados dos objetos Localização, Aeroportos e Voos.</p>
+            <p class="slds-m-bottom_medium slds-text-color_error">Todos os registros nesses objetos serão excluídos para a nova inserção.</p>
+            <lightning:button variant="brand" label="Importar dados" onclick="{!c.importData}"/>
+        </div>
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner alternativeText="Loading" />
+        </aura:if>
+    </div>
+
+</aura:component>

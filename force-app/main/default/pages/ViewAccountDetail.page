@@ -1,0 +1,8 @@
+<apex:page id="ViewAccountDetail" sidebar="false" showHeader="true" docType="html-5.0" standardController="Account" lightningStylesheets="true" extensions="ViewAccountDetailController">
+    <apex:form >
+        <apex:pageBlock mode="maindetal">
+            <apex:detail title="true" subject="{!Account.id}"/>
+            <c:ContactList list="{!listContact}" newAddContact="{!newContact}" newDeleteContact="{!deleteContact}" saveContact="{!saveContacts}" editContact="{!editContacts}" isEditMode="{!isEditMode}" isDetail="true"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

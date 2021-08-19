@@ -1,0 +1,50 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+
+    <aura:attribute name="vooIda" type="Object" default="{}" />
+    <aura:attribute name="vooVolta" type="Object" default="{}" />
+    <aura:attribute name="moeda" type="String" default="USD" />
+    
+    <aura:registerEvent name="ticketEventClick" type="c:TicketEventClick"/>
+
+    <lightning:card>
+        <div class="slds-grid slds-grid_align-space">
+            <div id="primeira_coluna" class="slds-col">
+                <p>{!v.vooIda.Companhia__c}</p>
+                <p>{!v.vooVolta.Companhia__c}</p>
+            </div>
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <strong><p>{!v.vooIda.Hora_de_Partida__c}</p></strong>
+                        <p>{!v.vooIda.Aeroporto_Partida__r.Sigla__c}</p>
+                    </div>
+                    <div class="slds-col">
+                        <div class="seta"></div>
+                    </div>
+                    <div class="slds-col">
+                        <strong><p>{!v.vooIda.Hora_de_Chegada__c} <aura:if isTrue="{!v.vooIda.Data_Partida__c != v.vooIda.Data_Chegada__c}">+1</aura:if></p></strong>
+                        <p>{!v.vooIda.Aeroporto_Chegada__r.Sigla__c}</p>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <strong><p>{!v.vooVolta.Hora_de_Partida__c}</p></strong>
+                        <p>{!v.vooVolta.Aeroporto_Partida__r.Sigla__c}</p>
+                    </div>
+                    <div class="slds-col">
+                        <div class="seta"></div>
+                    </div>
+                    <div class="slds-col">
+                        <strong><p>{!v.vooVolta.Hora_de_Chegada__c}<aura:if isTrue="{!v.vooVolta.Data_Partida__c != v.vooVolta.Data_Chegada__c}">+1</aura:if></p></strong>
+                        <p>{!v.vooVolta.Aeroporto_Chegada__r.Sigla__c}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <p><strong><lightning:formattedNumber value="{!v.vooIda.Valor__c + v.vooVolta.Valor__c}" formatStyle="currency" currencyCode="{!v.moeda}" currencyDisplayAs="code"/></strong></p>
+                <lightning:button variant="brand" label="Reservar" title="Reservar" onclick="{!c.reservaHandleClick }" />
+            </div>
+        </div>
+    </lightning:card>
+
+</aura:component>

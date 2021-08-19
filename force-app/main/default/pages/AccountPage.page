@@ -1,0 +1,48 @@
+<apex:page id="AccountPage" docType="html-5.0" showHeader="true" sidebar="false" standardController="Account" extensions="AccountControllerExtension" lightningStylesheets="true">
+    <style>
+        button {
+            -webkit-appearance: none;
+            position: relative;
+            display: inline-block;
+            border: 1px solid transparent;
+            padding: 0;
+            font-size: .75rem;
+            line-height: 1.875rem;
+            text-decoration: none;
+            white-space: normal;
+            border-radius: .25rem;
+            background: transparent;
+            background-clip: border-box;
+            color: rgba(1, 118, 211, 1);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-transition: color .05s linear,background-color .05s linear;
+            transition: color .05s linear,background-color .05s linear;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid rgb(221, 219, 218);
+        }
+        button:hover{
+            background-color: rgb(250, 250, 249);
+        }
+    </style>
+    <apex:form id="accountForm">
+        <apex:actionFunction name="doCancelActionFunction" action="{!doCancel}" immediate="true"/>
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Salvar" action="{!saveAccount}"/>
+                <button type="button" onclick="doCancelActionFunction();">Cancel</button>
+            </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Account Information" columns="2">
+            <apex:inputField value="{!account.Name}"/>
+            <apex:inputField value="{!account.Site}"/>
+            <apex:inputField value="{!account.Phone}"/>
+        </apex:pageBlockSection>
+        <c:ContactList list="{!listContacts}" newAddContact="{!addContact}" newDeleteContact="{!deleteContact}" isEditMode="true"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

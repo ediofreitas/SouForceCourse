@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT">
+    <aura:attribute name="idVooIda" type="String"/>
+    <aura:attribute name="idVooVolta" type="String"/>
+</aura:event>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-combobox
+    name="variant"
+    label="Variant"
+    value={variant}
+    placeholder="Select your variant"
+    options={variants}
+    onchange={handleVariantChanged}>   
+    </lightning-combobox>
+    <lightning-combobox
+    name="mode"
+    label="Mode"
+    value={mode}
+    placeholder="Select your mode"
+    options={modes}
+    onchange={handleModeChanged}>   
+    </lightning-combobox>
+    <lightning-button variant="brand" label="Toast" title="Show Toast" onclick={handleToastEvent} class="slds-m-left_x-small"></lightning-button>
+</template>

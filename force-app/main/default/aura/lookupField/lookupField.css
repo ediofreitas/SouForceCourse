@@ -1,0 +1,9 @@
+.THIS .slds-combobox__input-entity-icon + .slds-input-has-icon_left {
+    padding-left: 2rem;
+}
+.THIS .min-to-fit-progress {
+    min-height: 40px;
+}
+.THIS .full-size {
+    width:100%;
+}

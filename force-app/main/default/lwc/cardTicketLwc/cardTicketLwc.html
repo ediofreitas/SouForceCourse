@@ -1,0 +1,13 @@
+<template>
+        <lightning-card>
+            <div>
+                <h1>{recordId}</h1>
+                <h2>{mensagem}</h2>
+                <template if:true={record.data}>
+                    <h1>{record.data.label}</h1>
+                    <h2>{record.data.pluralLabel}</h2>
+                    <h3>{record.data.iconName}</h3>
+                </template>
+            </div>
+        </lightning-card>
+</template>

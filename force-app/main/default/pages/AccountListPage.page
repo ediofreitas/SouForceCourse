@@ -1,0 +1,53 @@
+<apex:page id="AccountListPage" docType="html-5.0" showHeader="true" sidebar="false" standardController="Account" recordSetVar="accounts" lightningStylesheets="true">
+    
+    <style>
+        .pageButton{
+            margin-right: 5px;
+        }
+    </style>
+
+    <apex:form id="listForm">
+        <apex:pageBlock title="Account list">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="New Account" action="{!URLFOR($Action.Account.New)}"></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:selectList value="{!filterId}" size="1">
+                <apex:selectOptions value="{!listViewOptions }"/>
+                <apex:actionSupport event="onchange" reRender="listForm"/>
+            </apex:selectList>
+            <apex:pageBlockTable value="{!accounts}" var="account" rows="{!pageSize}">
+                <apex:column >
+                    <apex:commandLink value="Edit" action="{!URLFOR($Action.Account.Edit, account.Id)}"/> | 
+                    <apex:commandLink value="PDF" action="{!URLFOR($Page.AccountPDF,null, [Id=account.id])}" target="_blank"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Name</apex:facet>
+                    <apex:outputLink value="/apex/ViewAccountDetail?Id={!account.Id}">{!account.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!account.Phone}"/>
+                <apex:column value="{!account.Website}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:outputPanel layout="block" style="display: flex; flex-direction: row; justify-content: space-between">
+            <div>
+                {!PageNumber} of {! CEILING(ResultSize / PageSize) }
+            </div>
+            <div>
+                <apex:commandLink styleclass="pageButton" action="{!First}" value="<< First"></apex:commandLink>
+                <apex:commandLink styleclass="pageButton" action="{!Previous}" value="< Previous"></apex:commandLink>
+                <apex:commandLink styleclass="pageButton" action="{!Next}" value="Next >"></apex:commandLink>
+                <apex:commandLink styleclass="pageButton" action="{!Last}" value="Last >>"></apex:commandLink>
+            </div>
+            <div>
+                <apex:selectList value="{!pageSize}" size="1">
+                    <apex:selectOption itemValue="5" itemLabel="5"></apex:selectOption>
+                    <apex:selectOption itemValue="10" itemLabel="10"></apex:selectOption>
+                    <apex:selectOption itemValue="15" itemLabel="15"></apex:selectOption>
+                    <apex:selectOption itemValue="20" itemLabel="20"></apex:selectOption>
+                    <apex:actionSupport event="onchange" reRender="listForm"/>
+                </apex:selectList>
+
+            </div>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

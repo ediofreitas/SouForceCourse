@@ -1,0 +1,38 @@
+<apex:page id="MyFirstPage" docType="html-5.0" showHeader="true" sidebar="false">
+
+
+    <style>
+        .myButton{
+            padding: 10px;
+            background: white;
+            color: #1798C1;
+            border: 2px solid #1798C1;
+            transition: .2s linear;
+        }
+
+        .myButton:hover {
+            background: #1798C1;
+            color: white;
+
+        }
+
+    </style>   
+    <div class="container">
+        <button class="myButton" onclick="handleClick();">
+            Click Me
+        </button>
+    </div>
+    
+    <script>
+        function handleClick(){
+            let name = prompt('Say your name.');
+            if (name == null || name == ''){
+                alert(`Escreva um nome!`);
+            }else{
+                alert(`Greetings ${name}!!`);
+            }
+            
+        }
+    </script>       
+    
+</apex:page>

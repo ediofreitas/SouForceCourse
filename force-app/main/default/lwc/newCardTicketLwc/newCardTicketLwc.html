@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-grid_align-space">
+            <div id="primeira_coluna" class="slds-col">
+                <p>{vooIda.Companhia__c}</p>
+                <p>{vooVolta.Companhia__c}</p>
+            </div>
+            <div class="slds-col">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <strong><p>{vooIda.Hora_de_Partida__c}</p></strong>
+                        <p>{vooIda.Aeroporto_Partida__r.Sigla__c}</p>
+                    </div>
+                    <div class="slds-col">
+                        <div class="seta"></div>
+                    </div>
+                    <div class="slds-col">
+                        <strong><p>{vooIda.Hora_de_Chegada__c} <template if:true={diaDiferenteIda}>+1</template></p></strong>
+                        <p>{vooIda.Aeroporto_Chegada__r.Sigla__c}</p>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <strong><p>{vooVolta.Hora_de_Partida__c}</p></strong>
+                        <p>{vooVolta.Aeroporto_Partida__r.Sigla__c}</p>
+                    </div>
+                    <div class="slds-col">
+                        <div class="seta"></div>
+                    </div>
+                    <div class="slds-col">
+                        <strong><p>{vooVolta.Hora_de_Chegada__c}<template if:true={diaDiferenteVolta}>+1</template></p></strong>
+                        <p>{vooVolta.Aeroporto_Chegada__r.Sigla__c}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <p><strong><lightning-formatted-number value={valorTotal} format-style="currency" currency-code={moeda} currency-display-as="code"></lightning-formatted-number></strong></p>
+                <lightning-button variant="brand" label="Reservar" title="Reservar" onclick={reservaHandleClick}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

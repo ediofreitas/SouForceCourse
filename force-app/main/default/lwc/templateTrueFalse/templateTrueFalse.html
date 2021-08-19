@@ -1,0 +1,10 @@
+<template>
+    <ul>
+        <template if:true={data}>
+            <template for:each={data} for:item="item" for:index="index">
+                <li key={item.name}>{index}) {item.name}</li>
+            </template>
+        </template>
+    </ul>
+    
+</template>

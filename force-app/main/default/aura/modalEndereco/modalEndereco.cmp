@@ -1,0 +1,58 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId" controller="modalEnderecoController">
+
+    <aura:attribute name="recordId" type="String" />
+
+    <aura:attribute name="cep" type="String" />
+    <aura:attribute name="tipoDeEndereco" type="String" />
+    <aura:attribute name="rua" type="String" />
+    <aura:attribute name="endereco" type="String" />
+    <aura:attribute name="estado" type="String" />
+    <aura:attribute name="bairro" type="String" />
+    <aura:attribute name="latitude" type="String" />
+    <aura:attribute name="longitude" type="String" />
+    <aura:attribute name="cidade" type="String" />
+    <aura:attribute name="ibge" type="String" />
+    <aura:attribute name="ddd" type="String" />
+
+
+    <!--<lightning:recordEditForm objectApiName="Account" onsubmit="{!c.handleSubmit}">-->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning:input name="Cep" label="Cep" value="{!v.cep}"/>
+                <lightning:input label="Tipo de Endereço" value="{!v.tipoDeEndereco}" />
+                <lightning:input label="Rua" value="{!v.rua}"/>
+                <lightning:input label="Endereço" value="{!v.endereco}"/>
+                <lightning:input label="Estado" value="{!v.estado}"/>
+                <lightning:input label="Bairro" value="{!v.bairro}"/>
+            </div>
+            <div class="slds-col slds-m-top_large">
+                <lightning:button variant="brand" label="Pesquisar" title="Pesquisar" onclick="{! c.handleClick }" />
+                <lightning:input label="Latitude" value="{!v.latitude}"/>
+                <lightning:input label="Longitude" value="{!v.longitude}"/>
+                <lightning:input label="Cidade" value="{!v.cidade}"/>
+                <lightning:input label="Ibge" value="{!v.ibge}"/>
+                <lightning:input label="DDD" value="{!v.ddd}"/>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center">
+            <lightning:button type="submit" name="Submit" label="submit" class="slds-m-top_medium" onclick="{!c.handleSubmit}"/>
+        </div>
+    <!--</lightning:recordEditForm>-->   
+    <!--<div class="slds-p-around_medium">
+        <lightning:recordEditForm objectApiName="Account" onsubmit="{!c.handleSubmit}">
+            <lightning:input Name="Cep" Label="Cep"/>
+            <lightning:button variant="brand" label="Pesquisar" title="Pesquisar" onclick="{! c.handleClick }" />
+            <lightning:input Name="Tipo de Endereço" value="{!v.tipoDeEndereco}" />
+            <lightning:input Name="Rua" value="{!v.rua}"/>
+            <lightning:input Name="Endereço" value="{!v.endereco}"/>
+            <lightning:input Name="Estado" value="{!v.estado}"/>
+            <lightning:input Name="Bairro" value="{!v.bairro}"/>
+            <lightning:input Name="Latitude" value="{!v.latitude}"/>
+            <lightning:input Name="Longitude" value="{!v.longitude}"/>
+            <lightning:input Name="Cidade" value="{!v.cidade}"/>
+            <lightning:input Name="Ibge" value="{!v.ibge}"/>
+            <lightning:input Name="DDD" value="{!v.ddd}"/>
+            <lightning:button type="submit" name="Submit" label="submit" class="slds-m-top_medium"/>
+        </lightning:recordEditForm>
+    </div>-->
+</aura:component>

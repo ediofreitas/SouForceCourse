@@ -1,0 +1,91 @@
+[
+    {
+        "AeroPartida": "GRU",
+        "AeroChegada": "SSA",
+        "DataPartida": "\"2021-01-20\"",
+        "DataChegada": "\"2021-01-20\"",
+        "HoraPartida": "11:00 AM",
+        "HoraChegada": "14:00 PM",
+        "Duracao": "3:00",
+        "Companhia": "Gol",
+        "Assento": "25A",
+        "Valor": 700
+    },{
+        "AeroPartida": "SSA",
+        "AeroChegada": "GRU",
+        "DataPartida": "\"2021-01-30\"",
+        "DataChegada": "\"2021-01-30\"",
+        "HoraPartida": "13:00 PM",
+        "HoraChegada": "16:00 PM",
+        "Duracao": "3:00",
+        "Companhia": "Gol",
+        "Assento": "30B",
+        "Valor": 700
+    },{
+        "AeroPartida": "MAO",
+        "AeroChegada": "GRU",
+        "DataPartida": "\"2021-02-02\"",
+        "DataChegada": "\"2021-02-02\"",
+        "HoraPartida": "08:00 AM",
+        "HoraChegada": "14:00 PM",
+        "Duracao": "6:00",
+        "Companhia": "LATAM",
+        "Assento": "23A",
+        "Valor": 1000
+    },{
+        "AeroPartida": "GRU",
+        "AeroChegada": "MAO",
+        "DataPartida": "\"2021-02-10\"",
+        "DataChegada": "\"2021-02-10\"",
+        "HoraPartida": "13:00 PM",
+        "HoraChegada": "20:00 PM",
+        "Duracao": "7:00",
+        "Companhia": "LATAM",
+        "Assento": "12C",
+        "Valor": 1000
+    },{
+        "AeroPartida": "POA",
+        "AeroChegada": "MAO",
+        "DataPartida": "\"2021-01-16\"",
+        "DataChegada": "\"2021-01-16\"",
+        "HoraPartida": "06:30 AM",
+        "HoraChegada": "13:00 PM",
+        "Duracao": "6:30",
+        "Companhia": "Azul",
+        "Assento": "10A",
+        "Valor": 1200
+    },{
+        "AeroPartida": "MAO",
+        "AeroChegada": "POA",
+        "DataPartida": "\"2021-01-30\"",
+        "DataChegada": "\"2021-01-30\"",
+        "HoraPartida": "12:30 AM",
+        "HoraChegada": "19:00 PM",
+        "Duracao": "7:30",
+        "Companhia": "Azul",
+        "Assento": "12C",
+        "Valor": 1200
+    },{
+        "AeroPartida": "SSA",
+        "AeroChegada": "POA",
+        "DataPartida": "\"2021-01-10\"",
+        "DataChegada": "\"2021-01-11\"",
+        "HoraPartida": "22:00 PM",
+        "HoraChegada": "01:00 AM",
+        "Duracao": "3:00",
+        "Companhia": "Avianca",
+        "Assento": "14B",
+        "Valor": 900
+    },{
+        "AeroPartida": "POA",
+        "AeroChegada": "SSA",
+        "DataPartida": "\"2021-01-15\"",
+        "DataChegada": "\"2021-01-15\"",
+        "HoraPartida": "17:00 PM",
+        "HoraChegada": "20:00 PM",
+        "Duracao": "3:00",
+        "Companhia": "Avianca",
+        "Assento": "13A",
+        "Valor": 900
+    }
+]
